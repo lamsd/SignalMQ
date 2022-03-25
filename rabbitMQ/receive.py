@@ -3,7 +3,7 @@ import queue
 import pika, sys, os
 
 def main():
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host="192.168.31.240"))
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host="localhost"))
     channel = connection.channel()
     channel.queue_declare(queue='hello')
     def callback(ch, method, properties, body):
